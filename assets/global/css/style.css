@@ -1,0 +1,36 @@
+html {
+  
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body{
+    font-family: 'Droid Sans', sans-serif; !important;
+}
+.bg{
+    background:url("../images/banner_bg.png");
+    width:100%;
+    background-repeat:no-repeat; 
+    background-size:cover;  
+ 
+}
+.navbar-default{
+    
+    background-color: transparent;
+     border-color: transparent; 
+}
+.nav>li>a{
+    padding: 50px 76px;
+    color: #ffffff;
+    font-size: 260%  
+}
+.nav>li>a:focus, .nav>li>a:hover{
+   background-color: transparent;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+@media print { 
+			
+			}
+ 
