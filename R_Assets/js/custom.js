@@ -55,15 +55,44 @@ var data = [
 
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        url: "forclosureData.php"
     });
 });
 
 
 
- function AddRupeeFormatter(value, row, index, field) {
+ function AddRupeeRMFormatter(value, row, index, field) {
 
-    return '₹ ' +row.forClosure_Amount;
+    return '₹ ' +row.principleRemaining;
+             
+    }
+
+
+
+ function AddRupeeIPFormatter(value, row, index, field) {
+
+    return '₹ ' +row.interestPending;
+             
+    }
+
+
+ function AddRupeeEBFormatter(value, row, index, field) {
+
+    return '₹ ' +row.EmiBounce;
+             
+    }
+
+
+ function AddRupeeFCCFormatter(value, row, index, field) {
+
+    return '₹ ' +row.forclosureCharges;
+             
+    }
+
+
+ function AddRupeeTotAmountFormatter(value, row, index, field) {
+
+    return '₹ ' +row.forclosureTotAmount;
              
     }
 
@@ -109,7 +138,7 @@ function AddRupeeSorter(a, b) {
             //alert('My Clicked row  is , row: ' + JSON.stringify(row));
             bootbox.confirm({
                             title: "Are you Sure want to ForeClose this Account",
-                                message: "<h2 class='fnt22 fnt777'>Are You Sure Want to PreClose This Account ?<br><br>Customer Have to Pay Sum of <strong class='text-danger'>₹ "+row.forClosure_Amount+"</strong></h2>",
+                                message: "<h2 class='fnt22 fnt777'>Are You Sure Want to PreClose This Account ?<br><br>Customer Have to Pay Sum of <strong class='text-danger'>₹ "+row.forclosureTotAmount+"</strong></h2>",
                                 buttons: {
                                     confirm: {
                                         label: ' Confirm',
@@ -136,7 +165,7 @@ function AddRupeeSorter(a, b) {
                 values: [row.id]
             });
             */
-           var foreclosureAmount= parseFloat(row.forClosure_Amount)+ parseFloat(5000);
+           var foreclosureAmount= parseFloat(row.forclosureTotAmount)+ parseFloat(5000);
            
             bootbox.confirm({
                                 title: "Are you Sure want to ForeClose this Account",
@@ -169,7 +198,7 @@ function AddRupeeSorter(a, b) {
             });
             */
             
-          // var foreclosureAmount= parseFloat(row.forClosure_Amount)+ parseFloat(5000);
+          // var foreclosureAmount= parseFloat(row.forclosureTotAmount)+ parseFloat(5000);
            
             bootbox.prompt({
                                  title: "Are you Sure want to ForeClose this Account",
@@ -187,7 +216,7 @@ function AddRupeeSorter(a, b) {
                                 callback: function (result) {
                                               //  console.log(result);
                                                 //alert(result);
-                                                var foreclosureAmount= parseFloat(row.forClosure_Amount)+ parseFloat(result); 
+                                                var foreclosureAmount= parseFloat(row.forclosureTotAmount)+ parseFloat(result); 
                                                 bootbox.confirm({
                                                                     title: "Are you Sure want to ForeClose this Account",
                                                                     message: "<h2 class='fnt22 fnt777'>Are You Sure Want to PreClose This Account  ?<br><br>Customer Have to Pay Sum of <strong class='text-danger'>₹ "+foreclosureAmount+"</strong></h2>",

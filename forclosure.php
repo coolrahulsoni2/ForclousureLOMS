@@ -49,6 +49,7 @@
 									           data-show-pagination-switch="false"
 									           data-pagination="true"
 									           data-id-field="id"
+									           
 									           data-page-list="[10, 25, 50, 100, ALL]"
 									           data-show-footer="false"
 									           data-height="500"
@@ -57,13 +58,23 @@
 								>
 									    <thead>
 									    <tr>
-									        <th data-field="serialNumber" data-sortable="true" data-width="50px">Sr. No.</th>
-									        <th data-field="Cid" data-sortable="true"  data-width="50px">Id</th>
-									        <th data-field="cName" data-sortable="true"   data-width="150px">Name</th>
-									        <th data-field="loan_Start_Date" data-sortable="true"  data-width="100px">Loan Start Date</th>
-									        <th data-field="loan_End_Date" data-sortable="true"  data-width="1000px">Loan End Date</th>
-									        <th data-formatter="AddRupeeFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="1000px">Forclosure Amount</th>
-									        <th data-formatter="operateFormatter" data-events="operateEvents" data-sortable="false"  data-width="1000px">Setting</th>
+									        <th data-field="serialNumber" data-sortable="true" data-width="50px">No.</th>
+									        <th data-field="custId" data-sortable="true"  data-width="50px">Cp</th>
+									        <th data-field="loanId" data-sortable="true"  data-width="50px">LP</th>
+									        <th data-field="name" data-sortable="true"   data-width="350px">Name</th>
+									        <th data-field="firstEmi" data-sortable="true"  data-width="120px">Start</th>
+									        <th data-field="lastEmi" data-sortable="true"  data-width="120px">End</th>
+									        <th data-formatter="AddRupeeRMFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="120px">Rem. Principle</th>
+
+									        <th data-formatter="AddRupeeIPFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="120px">Interest Pend</th>
+
+									        <th data-formatter="AddRupeeEBFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="120px">EMI Bounce</th>
+
+									        <th data-formatter="AddRupeeFCCFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="120px">FC Charge</th>
+
+									        <th data-formatter="AddRupeeTotAmountFormatter" data-sorter="AddRupeeSorter"  data-sortable="true"  data-width="120px">Net Amount</th>
+
+									        <th data-formatter="operateFormatter" data-events="operateEvents" data-sortable="false"  data-width="150px">Setting</th>
 									    </tr>
 									    </thead>
 								</table>
